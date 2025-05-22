@@ -2,18 +2,25 @@
 This version of tetris was made with PyGame.
 
 # Features
-These are all things to consider to be part of the game.  With most games it's good to have 5 to 15 features
+These are all things to consider to be part of the game.  With most games it's good to have 5 to 15 features.
+
+## Current Features
+This is so far the list of features within this project we currently have:
+* none
+
+## Future Features
 * Web-based
 * Mobile friendly
-* Console - later
+* Console - later on especially Steam Deck
 * Able to use a gamepad
 * Multiplayer?
 
 ## OS Compatibility
-- [ ] MacOS
-- [ ] Windows
-- [ ] Linux
-- [ ] Web-based
+Must implement:
+- [ ] MacOS: To locally play on my computer
+- [ ] Windows: To be accessible with to others
+- [ ] Linux: To be accessible with devices like Steam Deck
+- [ ] Web-based: To be able to play on the website
 
 Skipping for now because we might implement this game in a puzzle collection game instead
 - [ ] iOS
@@ -33,8 +40,20 @@ Skipping for now because we might implement this game in a puzzle collection gam
 # Game Art
 We will ultimately use GIMP to develop sprites and graphics for the game.
 
+Needs:
+- [ ] Block sprites
+- [ ] Background
+- [ ] Scoreboard
+- [ ] ...
+
 # Audio Files
 We will ultimately use Logic Pro X to develop the sounds for this game.
+
+Needs:
+- [ ] Music
+- [ ] Block Sound Effects
+- [ ] Level Transition Sound Effects
+- [ ] ...
 
 # Platforms
 Will need to add this to platforms to sell later on.  Most likely will just have this published on a website for free (or little money).
