@@ -2,7 +2,7 @@
 This version of tetris was made with PyGame.
 
 # Features
-These are all things to consider to be part of the game.  With most games it's good to have 5 to 15 features.
+These are all things to consider to be part of the game.  With most games it's good to have 5 to 15 features.  Start of Development on May 22, 2025
 
 ## Current Features
 This is so far the list of features within this project we currently have:
@@ -15,7 +15,7 @@ This is so far the list of features within this project we currently have:
 * Able to use a gamepad
 * Multiplayer?
 
-## OS Compatibility
+### OS Compatibility
 Must implement:
 - [ ] MacOS: To locally play on my computer
 - [ ] Windows: To be accessible with to others
@@ -29,7 +29,7 @@ Skipping for now because we might implement this game in a puzzle collection gam
 - [ ] Xbox System
 - [ ] PlayStation System
 
-## Controller Scheme
+### Controller Scheme
 - [ ] Mouse and Keyboard
 - [ ] Touch
 - [ ] Gamepad
@@ -37,25 +37,25 @@ Skipping for now because we might implement this game in a puzzle collection gam
   - [ ] Xbox Wireless Controller
   - [ ] PlayStation DualSense (PS5)
 
-# Game Art
+## Game Art
 We will ultimately use GIMP to develop sprites and graphics for the game.
 
 Needs:
 - [ ] Block sprites
 - [ ] Background
 - [ ] Scoreboard
-- [ ] ...
+- [ ] Title Menu
 
-# Audio Files
+## Audio Files
 We will ultimately use Logic Pro X to develop the sounds for this game.
 
 Needs:
 - [ ] Music
 - [ ] Block Sound Effects
 - [ ] Level Transition Sound Effects
-- [ ] ...
+- [ ] Selecting items in the menu
 
-# Platforms
+## Platforms
 Will need to add this to platforms to sell later on.  Most likely will just have this published on a website for free (or little money).
 
 List:
@@ -68,3 +68,7 @@ List:
 * Nintendo Store - Puzzle Collection
 * Xbox Live - Puzzle Collection
 * PlayStation Network - Puzzle Collection
+
+# References
+* [PyGame](https://www.pygame.org/docs/)
+* [Tech with Tim Tutorial](https://github.com/techwithtim/Python-Platformer.git)
