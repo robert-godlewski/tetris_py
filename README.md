@@ -2,7 +2,14 @@
 This version of tetris was made with PyGame.
 
 # To run in terminal
-Type % bash tetris.sh
+> % `bash tetris.sh`
+
+# Todos
+- [ ] Fix the controls with base game mechanics
+- [ ] Add in Graphics
+- [ ] Add in Audio
+- [ ] Game Testing and bug fixes
+- [ ] Web Page to deploy
 
 # Features
 These are all things to consider to be part of the game.  With most games it's good to have 5 to 15 features.  Start of Development on May 22, 2025
