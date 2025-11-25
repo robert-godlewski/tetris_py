@@ -1,0 +1,16 @@
+class Settings:
+    def __init__(self, screen_width: int=0, screen_height: int=0) -> None:
+        self.title = 'Py Tetris'
+        self.dev_name = 'PAC Studios'
+        self.screen_width = screen_width
+        self.screen_height = screen_height
+        self.fps = 60
+        self.lr_speed = 6 # Left/ Right movement for blocks
+        self.level = 1 # Will need to check for the highest block to change
+        # Fix the formula for the speed
+        # * Increase speed if there are a stack of blocks
+        # * Decrease speed based on the number of block rows removed
+        self.drop_speed = self.level
+
+        # self.bg_color = (230,230,230) # White
+        self.bg_color = 'purple'
