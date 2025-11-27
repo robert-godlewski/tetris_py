@@ -12,6 +12,11 @@ class Tetris:
         self.screen = pygame.display.set_mode(size=size)
         pygame.display.set_caption(title=self.settings.title)
 
+        from tetris.stats import Stats
+        # from tetris.scoreboard import Scoreboard
+        self.stats = Stats(self)
+        # self.scoreboard = Scoreboard(self)
+
         from tetris.block import Block
         self.test_block = Block(self)
 

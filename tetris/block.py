@@ -15,7 +15,7 @@ class Block(pygame.sprite.Sprite):
         * make separate classes and have the game randomly choose which block to use
         '''
         # Maybe update this entire class to alternate between the different test blocks
-        self.image = pygame.image.load('./tetris/assets/32x32BlackBlockTest.png')
+        self.image = pygame.image.load(f'{self.settings.image_root}/32x32BlackBlockTest.png')
         self.rect = self.image.get_rect()
 
         # Positioning variables:

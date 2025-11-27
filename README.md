@@ -11,6 +11,18 @@ This version of tetris was made with PyGame.
 - [ ] Game Testing and bug fixes
 - [ ] Web Page to deploy
 
+## Graphic Assets Needed
+- [ ] Blocks (to move around)
+- [ ] Border
+- [ ] Score counter(?) - Might be able to do this in PyGame
+- [ ] etc
+
+## Audio Assets Needed
+- [ ] Theme music
+- [ ] Game Over
+- [ ] Blocks removed
+- [ ] etc
+
 # Features
 These are all things to consider to be part of the game.  With most games it's good to have 5 to 15 features.  Start of Development on May 22, 2025
 
