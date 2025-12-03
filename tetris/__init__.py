@@ -7,10 +7,13 @@ from tetris.settings import Settings
 class Tetris:
     def __init__(self) -> None:
         pygame.init()
-        self.settings = Settings(screen_width=1280, screen_height=720)
+        self.settings = Settings(screen_width=320, screen_height=640)
         size = (self.settings.screen_width, self.settings.screen_height)
         self.screen = pygame.display.set_mode(size=size)
         pygame.display.set_caption(title=self.settings.title)
+
+        from tetris.gamegrid import GameGrid
+        self.game_grid = GameGrid(self, "32x32BlackBlockTest", width=self.settings.screen_width, height=self.settings.screen_height)
 
         from tetris.stats import Stats
         # from tetris.scoreboard import Scoreboard
@@ -18,7 +21,7 @@ class Tetris:
         # self.scoreboard = Scoreboard(self)
 
         from tetris.block import Block
-        self.test_block = Block(self)
+        self.test_block = Block(self, "32x32RedBlockTest")
 
     def run_game(self) -> None:
         clock = pygame.time.Clock()

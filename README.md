@@ -5,22 +5,51 @@ This version of tetris was made with PyGame.
 > % `bash tetris.sh`
 
 # Todos
-- [ ] Fix the controls with base game mechanics
-- [ ] Add in Graphics
+- [ ] Add in necessary classes
+- [ ] Add in 32 x 32 block grid
+- [ ] Fix Game Logic
+- [ ] Add in other Graphics
 - [ ] Add in Audio
 - [ ] Game Testing and bug fixes
 - [ ] Web Page to deploy
 
+## Game Classes Needed
+- [ ] Add in Game Grid Class: 2D array with 10 columns and 20 rows - In the process
+- [ ] Add in Tetromino Shape Classes
+  - [ ] Add in I shape and possible rotations
+  - [ ] Add in O shape and possible rotations
+  - [ ] Add in T shape and possible rotations
+  - [ ] Add in S shape and possible rotations
+  - [ ] Add in Z shape and possible rotations
+  - [ ] Add in J shape and possible rotations
+  - [ ] Add in L shape and possible rotations
+- [ ] Add in a Scoreboard Class - In the process
+
+## Game Logic Needed
+- [ ] Piece Movement
+  - [ ] Pieces should drop automatically due to gravity and faster when pressed down
+  - [ ] Can move the pieces left and right
+- [ ] Rotation: Add in rotation mechanism for the tetrominoes recalculating the block positions based on a pivot point and checking for collisions.
+- [ ] Collision Detection
+- [ ] Locking Pieces: When the current Tetromino reaches the bottom or lands on another block the game locks it in place and updates the game grid with occupied cells
+- [ ] Row Clearing: Detect and clear full rows, shift the blocks aboce down and update the score
+- [ ] Game Over Condition: Determine if the game ends when the new tetromino cannot move at all due to existing blocks
+
 ## Graphic Assets Needed
-- [ ] Blocks (to move around)
-- [ ] Border
-- [ ] Score counter(?) - Might be able to do this in PyGame
+- [x] 32 x 32 test block
+- [ ] 32 x 32 block grid
+- [ ] 32 x 32 Blocks for each tetromino shape
+- [ ] Scoreboard
+- [ ] Game Over Screen
+- [ ] Pause/ unpause button
 - [ ] etc
 
 ## Audio Assets Needed
 - [ ] Theme music
 - [ ] Game Over
-- [ ] Blocks removed
+- [ ] Row Clearing
+- [ ] Piece movement
+- [ ] Piece rotation
 - [ ] etc
 
 # Features

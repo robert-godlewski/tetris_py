@@ -4,7 +4,7 @@ from tetris import Tetris
 
 
 class Block(pygame.sprite.Sprite):
-    def __init__(self, game: Tetris) -> None:
+    def __init__(self, game: Tetris, image_name: str, image_extension: str="png") -> None:
         super().__init__()
         self.screen = game.screen
         self.settings = game.settings
@@ -15,7 +15,8 @@ class Block(pygame.sprite.Sprite):
         * make separate classes and have the game randomly choose which block to use
         '''
         # Maybe update this entire class to alternate between the different test blocks
-        self.image = pygame.image.load(f'{self.settings.image_root}/32x32BlackBlockTest.png')
+        image_path = f'{self.settings.image_root}/{image_name}.{image_extension}'
+        self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()
 
         # Positioning variables:
@@ -49,3 +50,42 @@ class Block(pygame.sprite.Sprite):
 
     def blitme(self) -> None:
         self.screen.blit(self.image, self.rect)
+
+
+# Shapes:
+'''
+I = []
+    []
+    []
+    []
+'''
+'''
+O = [][]
+    [][]
+'''
+'''
+T = [][][]
+      []
+'''
+'''
+S =   [][]
+    [][]
+'''
+'''
+Z = [][]
+      [][]
+'''
+'''
+J =   []
+      []
+    [][]
+'''
+
+class Lblock(Block):
+    '''
+    L = []
+        []
+        [][]
+    '''
+    def __init__(self, game: Tetris) -> None:
+        super().__init__(game)
