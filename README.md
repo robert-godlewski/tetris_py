@@ -5,8 +5,7 @@ This version of tetris was made with PyGame.
 > % `bash tetris.sh`
 
 # Todos
-- [ ] Add in necessary classes
-- [ ] Add in 32 x 32 block grid
+- [ ] Add in necessary classes - In the process
 - [ ] Fix Game Logic
 - [ ] Add in other Graphics
 - [ ] Add in Audio
@@ -14,7 +13,7 @@ This version of tetris was made with PyGame.
 - [ ] Web Page to deploy
 
 ## Game Classes Needed
-- [ ] Add in Game Grid Class: 2D array with 10 columns and 20 rows - In the process
+- [x] Add in Game Grid Class: 2D array - try it with 10 columns and 20 rows
 - [ ] Add in Tetromino Shape Classes
   - [ ] Add in I shape and possible rotations
   - [ ] Add in O shape and possible rotations
@@ -36,8 +35,8 @@ This version of tetris was made with PyGame.
 - [ ] Game Over Condition: Determine if the game ends when the new tetromino cannot move at all due to existing blocks
 
 ## Graphic Assets Needed
-- [x] 32 x 32 test block
-- [ ] 32 x 32 block grid
+- [x] 32 x 32 test block - For Testing
+- [x] 32 x 32 block grid - For Testing
 - [ ] 32 x 32 Blocks for each tetromino shape
 - [ ] Scoreboard
 - [ ] Game Over Screen

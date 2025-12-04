@@ -19,22 +19,22 @@ class GameGrid:
         self.block_size = game.settings.block_size
         self.rows = round(self.height/self.block_size)
         self.columns = round(self.width/self.block_size)
-        column_arr = [{'image': self.grid, 'rect': self.grid_rect} for _ in range(self.columns)]
+        column_arr = [{'image': self.grid, 'rect': self.grid_rect} for _ in range(self.columns)] # Might need to fix this because I'm not sure if we really need 'rect' at all
         self.grid_map = [column_arr for _ in range(self.rows)]
 
-    def fill_grid(self, image, image_rect, row_pos: int, col_pos: int) -> None:
+    def get_cell_coordinates(self, row_pos: int, col_pos: int) -> tuple:
+        x = col_pos * self.block_size
+        y = row_pos * self.block_size
+        return (x, y)
+
+    def fill_cell(self, image, image_rect, row_pos: int, col_pos: int) -> None:
         self.grid_map[row_pos][col_pos] = {
             'image': image, 
             'rect': image_rect
         }
 
-    def clear_grid(self, row_pos: int, col_pos: int) -> None:
+    def clear_cell(self, row_pos: int, col_pos: int) -> None:
         self.grid_map[row_pos[col_pos]] = {
             'image': self.grid, 
             'rect': self.grid_rect
         }
-
-    def blitme(self) -> None:
-        for r in self.grid_map:
-            for c in self.grid_map[r]:
-                self.screen.blit(self.grid_map[r][c]['image'],self.grid_map[r][c]['rect']) # Could also be self.screen.fill() instead

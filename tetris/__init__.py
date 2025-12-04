@@ -12,13 +12,13 @@ class Tetris:
         self.screen = pygame.display.set_mode(size=size)
         pygame.display.set_caption(title=self.settings.title)
 
-        from tetris.gamegrid import GameGrid
-        self.game_grid = GameGrid(self, "32x32BlackBlockTest", width=self.settings.screen_width, height=self.settings.screen_height)
-
         from tetris.stats import Stats
         # from tetris.scoreboard import Scoreboard
         self.stats = Stats(self)
         # self.scoreboard = Scoreboard(self)
+
+        from tetris.gamegrid import GameGrid
+        self.game_grid = GameGrid(self, "32x32BlackGridBlock", width=self.settings.screen_width, height=self.settings.screen_height)
 
         from tetris.block import Block
         self.test_block = Block(self, "32x32RedBlockTest")
@@ -27,13 +27,7 @@ class Tetris:
         clock = pygame.time.Clock()
         while True:
             self._check_events()
-            # Need to fix the movement generation and mechanics here:
-            # * Check to see if the current block has reached the bottom or not
-            # * if it has then update the movement of the current block
-            # * otherwise check to see if there's a full row of existing blocks at any level
-            # ** if there's a full row clear those blocks and move everything that doesn't have a full row down quickly and decrease the level by the number of cleared rows.
-            # ** ...as reached the bottom/ other block then check to see if there's a full row
-            self.test_block.update_movement()
+            # self.test_block.update_movement()
             self._update_screen()
             clock.tick(self.settings.fps)
 
@@ -42,10 +36,10 @@ class Tetris:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-            elif event.type == pygame.KEYDOWN:
-                self._check_keydown_events(event)
-            elif event.type == pygame.KEYUP:
-                self._check_keyup_events(event)
+            # elif event.type == pygame.KEYDOWN:
+            #     self._check_keydown_events(event)
+            # elif event.type == pygame.KEYUP:
+            #     self._check_keyup_events(event)
 
     def _check_keydown_events(self, event) -> None:
         if event.key == pygame.K_RIGHT:
@@ -67,5 +61,11 @@ class Tetris:
 
     def _update_screen(self) -> None:
         self.screen.fill(self.settings.bg_color)
-        self.test_block.blitme()
+        # self.test_block.blitme()
+        self._fill_grid()
         pygame.display.flip()
+
+    def _fill_grid(self) -> None:
+        for r in range(self.game_grid.rows):
+            for c in range(self.game_grid.columns):
+                self.screen.blit(self.game_grid.grid_map[r][c]['image'], self.game_grid.get_cell_coordinates(r, c))
