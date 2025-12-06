@@ -6,7 +6,7 @@ This version of tetris was made with PyGame.
 
 # Todos
 - [ ] Add in necessary classes - In the process
-- [ ] Fix Game Logic
+- [ ] Fix Game Logic - In the process
 - [ ] Add in other Graphics
 - [ ] Add in Audio
 - [ ] Game Testing and bug fixes
@@ -25,7 +25,7 @@ This version of tetris was made with PyGame.
 - [ ] Add in a Scoreboard Class - In the process
 
 ## Game Logic Needed
-- [ ] Piece Movement
+- [ ] Piece Movement - In the process
   - [ ] Pieces should drop automatically due to gravity and faster when pressed down
   - [ ] Can move the pieces left and right
 - [ ] Rotation: Add in rotation mechanism for the tetrominoes recalculating the block positions based on a pivot point and checking for collisions.

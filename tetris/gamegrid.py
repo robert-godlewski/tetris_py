@@ -31,6 +31,12 @@ class GameGrid:
         y = row_pos * self.block_size
         return (x, y)
 
+    def check_cell_collision(self, row_pos: int, col_pos: int) -> bool:
+        if self.grid_map[row_pos][col_pos]['image'] == self.grid:
+            return True
+        else:
+            return False
+
     def fill_cell(self, image, image_rect, row_pos: int, col_pos: int) -> None:
         self.grid_map[row_pos][col_pos] = {
             'image': image, 
@@ -42,3 +48,9 @@ class GameGrid:
             'image': self.grid, 
             'rect': self.grid_rect
         }
+
+    def check_row(self, row_pos: int) -> bool:
+        for col in range(self.rows):
+            if self.grid_map[row_pos][col]['image'] is self.grid:
+                return False
+        return True
