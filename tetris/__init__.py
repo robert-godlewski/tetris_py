@@ -33,7 +33,7 @@ class Tetris:
         clock = pygame.time.Clock()
         while True:
             self._check_events()
-            # self.test_block.update_movement() # Will need to fix this
+            self.test_block.update()
             self._update_screen()
             clock.tick(self.settings.fps)
 

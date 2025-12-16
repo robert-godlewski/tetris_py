@@ -7,13 +7,11 @@ class Settings:
         self.audio_root = f'{self.assets_root}/audio'
         self.screen_width = screen_width
         self.screen_height = screen_height
-        self.fps = 60
         self.block_size = 32
-        self.lr_speed = 6 # Left/ Right movement for blocks
-        # Fix the formula for the speed
-        # * Increase speed if there are a stack of blocks
-        # * Decrease speed based on the number of block rows removed
-        self.drop_speed = 1
+
+        # Game Speed
+        self.fps = 2
+        self.fps_max = 60
 
         self.bg_color = (230,230,230) # White
         # self.bg_color = 'purple'
