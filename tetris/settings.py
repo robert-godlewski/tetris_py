@@ -7,7 +7,10 @@ class Settings:
         self.audio_root = f'{self.assets_root}/audio'
         self.screen_width = screen_width
         self.screen_height = screen_height
+
+        # Block and Tetromino settings
         self.block_size = 32
+        self.tetromino_shapes = ["I","O","T","S","Z","J","L",""]
 
         # Game Speed
         self.fps = 2

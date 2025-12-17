@@ -1,10 +1,9 @@
 import pygame
 
-from tetris import Tetris
-
 
 class GameGrid:
-    def __init__(self, game: Tetris, image_name: str, image_extension: str="png", width: int=32, height: int=32) -> None:
+    def __init__(self, game, image_name: str, image_extension: str="png", width: int=32, height: int=32) -> None:
+        # game = class Tetris
         self.screen = game.screen
         self.settings = game.settings
         self.screen_rect = game.screen.get_rect()
@@ -33,9 +32,9 @@ class GameGrid:
 
     def check_cell_collision(self, row_pos: int, col_pos: int) -> bool:
         if self.grid_map[row_pos][col_pos]['image'] == self.grid:
-            return True
+            return True # There's a collision
         else:
-            return False
+            return False # No collision
 
     def fill_cell(self, image, image_rect, row_pos: int, col_pos: int) -> None:
         self.grid_map[row_pos][col_pos] = {

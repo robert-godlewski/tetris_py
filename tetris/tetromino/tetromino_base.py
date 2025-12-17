@@ -1,11 +1,11 @@
 import pygame
 
-from tetris import Tetris
 from tetris.tetromino.block import Block
 
 
 class Tetromino(pygame.sprite.Group):
-    def __init__(self, game: Tetris, shape: str="", *sprites):
+    def __init__(self, game, shape: str="", *sprites):
+        # game = class Tetris
         super().__init__(*sprites)
         self.screen = game.screen
         self.settings = game.settings
@@ -15,22 +15,31 @@ class Tetromino(pygame.sprite.Group):
         self.shape = shape # Might need to do more things here later on
         self.blocks = sprites # len(sprites) = 4
 
+        # Checks to see if the tetromino is moving or not
+        self.is_active = True
+
         # Add in more details here
         # This class will also represent both the different shapes and the base where everything clumps up
 
     def fill(self):
+        # Repeats self.game_grid.fill_cell(...) for the whole group
         pass
 
     def rotate(self):
+        # Needed for most except O-shaped ones
         pass
 
     def update(self) -> None:
-        for block in self.blocks: self._update_movement(block)
+        for block in self.blocks: block.update()
 
-    def _update_movement(self, block: Block):
-        # 1. Drop down by one grid point or stay
-        # 2. Move left/right/down based on user input
-        pass
+    # def add(self) -> None:
+    #     # Adds in a new block to move.
+    #     # Only for the big group.
+    #     pass
+
+    # def remove(self) -> Block:
+    #     # Only removes 1 block from the group of Blocks and returns the first one.
+    #     return self.blocks[0]
 
 
 # Shapes:

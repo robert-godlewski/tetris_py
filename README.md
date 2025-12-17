@@ -7,7 +7,7 @@ This version of tetris was made with PyGame.
 # Todos
 - [ ] Add in necessary classes - In the process
 - [ ] Fix Game Logic - In the process
-- [ ] Add in other Graphics
+- [ ] Add in Graphics
 - [ ] Add in Audio
 - [ ] Game Testing and bug fixes
 - [ ] Web Page to deploy
@@ -15,6 +15,7 @@ This version of tetris was made with PyGame.
 ## Game Classes Needed
 - [x] Add in Game Grid Class: 2D array - try it with 10 columns and 20 rows
 - [ ] Add in Tetromino Shape Classes - Able to get 1 cell but need to make shapes
+  - [x] Add in Base Class - Started
   - [ ] Add in I shape and possible rotations
   - [ ] Add in O shape and possible rotations
   - [ ] Add in T shape and possible rotations
@@ -25,9 +26,9 @@ This version of tetris was made with PyGame.
 - [ ] Add in a Scoreboard Class - In the process
 
 ## Game Logic Needed
-- [ ] Piece Movement - In the process
-  - [ ] Pieces should drop automatically due to gravity and faster when pressed down
-  - [ ] Can move the pieces left and right
+- [x] Piece Movement
+  - [x] Pieces should drop automatically due to gravity and faster when pressed down
+  - [x] Can move the pieces left and right
 - [ ] Rotation: Add in rotation mechanism for the tetrominoes recalculating the block positions based on a pivot point and checking for collisions.
 - [ ] Collision Detection
 - [ ] Locking Pieces: When the current Tetromino reaches the bottom or lands on another block the game locks it in place and updates the game grid with occupied cells

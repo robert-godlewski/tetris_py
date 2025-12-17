@@ -1,10 +1,9 @@
 import pygame
 
-from tetris import Tetris
-
 
 class Block(pygame.sprite.Sprite):
-    def __init__(self, game: Tetris, row_pos: int, col_pos: int, image_name: str, image_extension: str="png") -> None:
+    def __init__(self, game, row_pos: int, col_pos: int, image_name: str, image_extension: str="png") -> None:
+        # game = class Tetris
         super().__init__()
         self.screen = game.screen
         self.settings = game.settings

@@ -1,8 +1,6 @@
-from tetris import Tetris
-
-
 class Stats:
-    def __init__(self, game: Tetris) -> None:
+    def __init__(self, game) -> None:
+        # game = class Tetris
         self.settings = game.settings
         self.game_active = False
         # Will need to get the high_score from the db
