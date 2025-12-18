@@ -31,7 +31,9 @@ class Tetris:
         # The active tetromino group that's moving
         self.sprite_shape = random.choice(self.settings.tetromino_shapes)
         self.block_base = Block(self, row_pos=0, col_pos=mid, image_name="32x32RedBlockTest") # adjust the settings here
-        self.active_tetro = Tetromino(self, self.sprite_shape, self.block_base) # Will need to fix this
+        self.active_tetro = Tetromino(self, self.sprite_shape)
+        # for _ in range (4): # Will need this loop later since all shapes are 4 blocks
+        self.active_tetro.add_block(self.block_base)
 
         self.stats = Stats(self)
         # self.scoreboard = Scoreboard(self)

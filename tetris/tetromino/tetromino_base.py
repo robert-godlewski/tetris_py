@@ -13,7 +13,8 @@ class Tetromino(pygame.sprite.Group):
         self.game_grid = game.game_grid
 
         self.shape = shape # Might need to do more things here later on
-        self.blocks = sprites # len(sprites) = 4
+        self.blocks = []
+        self.bottom_row = 0
 
         # Checks to see if the tetromino is moving or not
         self.is_active = True
@@ -21,25 +22,27 @@ class Tetromino(pygame.sprite.Group):
         # Add in more details here
         # This class will also represent both the different shapes and the base where everything clumps up
 
-    def fill(self):
+    def add_block(self, block: Block) -> None:
+        self.blocks.append(block)
+
+    def remove_block(self):
+        if len(self.blocks) > 0:
+            return self.blocks.pop() # Returns Block object at the end of the list
+        else:
+            return None
+
+    def fill(self) -> None:
         # Repeats self.game_grid.fill_cell(...) for the whole group
-        pass
+        mid = round(self.game_grid.columns/2)
+        # fix this whole thing
 
     def rotate(self):
-        # Needed for most except O-shaped ones
-        pass
+        # Doesn't rotate if it's the base or if it's O shaped
+        if self.shape == "O" or self.shape == "": pass
+        # Need to do something special for other shapes
 
     def update(self) -> None:
         for block in self.blocks: block.update()
-
-    # def add(self) -> None:
-    #     # Adds in a new block to move.
-    #     # Only for the big group.
-    #     pass
-
-    # def remove(self) -> Block:
-    #     # Only removes 1 block from the group of Blocks and returns the first one.
-    #     return self.blocks[0]
 
 
 # Shapes:
