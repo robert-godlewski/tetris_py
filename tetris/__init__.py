@@ -5,7 +5,7 @@ import random
 from tetris.settings import Settings
 from tetris.gamegrid import GameGrid
 from tetris.tetromino.block import Block
-from tetris.tetromino.tetromino_base import Tetromino
+from tetris.tetromino.tetromino_base import Tetromino, Oblock
 from tetris.stats import Stats
 # from tetris.scoreboard import Scoreboard
 
@@ -26,14 +26,16 @@ class Tetris:
         self.bottom_tetro.is_active = False
 
         # Set up a middle position for the blocks to generate at the top
-        mid = round(self.game_grid.columns/2)-1 # This will return the left top position
+        # mid = round(self.game_grid.columns/2)-1 # This will return the left top position
 
         # The active tetromino group that's moving
-        self.sprite_shape = random.choice(self.settings.tetromino_shapes)
-        self.block_base = Block(self, row_pos=0, col_pos=mid, image_name="32x32RedBlockTest") # adjust the settings here
-        self.active_tetro = Tetromino(self, self.sprite_shape)
-        # for _ in range (4): # Will need this loop later since all shapes are 4 blocks
-        self.active_tetro.add_block(self.block_base)
+        # self.sprite_shape = random.choice(self.settings.tetromino_shapes)
+        self.sprite_shape = "O"
+        # self.block_base = Block(self, row_pos=0, col_pos=mid, image_name="32x32RedBlockTest") # adjust the settings here
+        if self.sprite_shape == "O":
+            self.active_tetro = Oblock(self)
+        else:
+            self.active_tetro = Tetromino(self, self.sprite_shape)
 
         self.stats = Stats(self)
         # self.scoreboard = Scoreboard(self)
@@ -44,7 +46,8 @@ class Tetris:
             # Need to also check if self.bottom_tetro is moving or not
             # Also need to check if the self.active_tetro is active or not
             self._check_events()
-            self.block_base.update() # replace this with active_tetro
+            # self.block_base.update() # replace this with active_tetro
+            self.active_tetro.update()
             self._update_screen()
             clock.tick(self.settings.fps)
 
@@ -62,19 +65,25 @@ class Tetris:
         if event.key == pygame.K_q:
             sys.exit()
         if event.key == pygame.K_RIGHT:
-            self.block_base.moving_right = True
+            # self.block_base.moving_right = True
+            self.active_tetro.moving_right()
         elif event.key == pygame.K_LEFT:
-            self.block_base.moving_left = True
+            # self.block_base.moving_left = True
+            self.active_tetro.moving_left()
         elif event.key == pygame.K_DOWN:
-            self.block_base.moving_down = True
+            # self.block_base.moving_down = True
+            self.active_tetro.moving_down()
 
     def _check_keyup_events(self, event) -> None:
         if event.key == pygame.K_RIGHT:
-            self.block_base.moving_right = False
+            # self.block_base.moving_right = False
+            self.active_tetro.stop_moving_right()
         elif event.key == pygame.K_LEFT:
-            self.block_base.moving_left = False
+            # self.block_base.moving_left = False
+            self.active_tetro.stop_moving_left()
         elif event.key == pygame.K_DOWN:
-            self.block_base.moving_down = False
+            # self.block_base.moving_down = False
+            self.active_tetro.stop_moving_down()
 
     def _update_screen(self) -> None:
         self.screen.fill(self.settings.bg_color)

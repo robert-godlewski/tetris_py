@@ -15,9 +15,9 @@ This version of tetris was made with PyGame.
 ## Game Classes Needed
 - [x] Add in Game Grid Class: 2D array - try it with 10 columns and 20 rows
 - [ ] Add in Tetromino Shape Classes - Able to get 1 cell but need to make shapes
-  - [x] Add in Base Class - Started
+  - [ ] Add in Base Class - In the process
   - [ ] Add in I shape and possible rotations
-  - [ ] Add in O shape and possible rotations
+  - [ ] Add in O shape - In the process
   - [ ] Add in T shape and possible rotations
   - [ ] Add in S shape and possible rotations
   - [ ] Add in Z shape and possible rotations
